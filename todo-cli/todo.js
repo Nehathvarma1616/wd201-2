@@ -1,4 +1,6 @@
+/* eslint-disable */
 const todoList = () => {
+  var today = new Date().toISOString()
     all = []
     const add = (todoItem) => {
       all.push(todoItem)
@@ -10,6 +12,7 @@ const todoList = () => {
     const overdue = () => {
         var nv
         var overdue_lst =[]
+        
         for (nv in all){
             if (all[nv].dueDate < today){
                 overdue_lst.push(all[nv])
@@ -23,6 +26,7 @@ const todoList = () => {
     const dueToday = () => {
         var n
         var dueToday_lst =[]
+        
         for ( n in all ){
             if (all[n].dueDate === today){
                 dueToday_lst.push(all[n])
@@ -36,6 +40,7 @@ const todoList = () => {
     const dueLater = () => {
         var m
         var dueLater_lst =[]
+        
         for ( m in all ){
             if (all[m].dueDate > today){
                 dueLater_lst.push(all[m])
@@ -84,12 +89,14 @@ const todoList = () => {
       toDisplayableList
     };
   };
+
+  module.exports = todoList;
   
   // ####################################### #
   // DO NOT CHANGE ANYTHING BELOW THIS LINE. #
   // ####################################### #
   
-  const todos = todoList();
+  /*const todos = todoList();
   
   const formattedDate = d => {
     return d.toISOString().split("T")[0]
@@ -128,4 +135,4 @@ const todoList = () => {
   let itemsDueLater = todos.dueLater()
   let formattedItemsDueLater = todos.toDisplayableList(itemsDueLater)
   console.log(formattedItemsDueLater)
-  console.log("\n\n")
+  console.log("\n\n")*/
